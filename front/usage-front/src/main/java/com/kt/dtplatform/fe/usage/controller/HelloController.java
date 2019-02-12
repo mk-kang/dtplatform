@@ -16,7 +16,7 @@ public class HelloController {
 	@Autowired 
 	private JdbcTemplate jdbc;
 
-	@RequestMapping("/")
+	@RequestMapping("/api/usage/hi")
 	public String home() {
 		return "Hello Docker World";
 	}

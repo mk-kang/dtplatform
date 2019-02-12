@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.apache.logging.log4j.Logger;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +36,14 @@ public class SessionController {
 		Map<String, Object> m = new HashMap<>();
 		m.put("instance_ip", this.ip);
 		m.put("uuid", uid.toString());
+		return m;
+	}
+	
+	@RequestMapping("/cookieCheck")
+	Map<String, Object> uid(HttpServletRequest req) {
+		Cookie[] cookie = req.getCookies();
+		Map<String, Object> m = new HashMap<>();
+		m.put("cookie", cookie);
 		return m;
 	}
 
