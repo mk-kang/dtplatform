@@ -23,7 +23,7 @@ module.exports = {
     publicPath: "/assets/",
     contentBase: './tmp',
     proxy: {
-      "/api/usage/**": "http://mk.kt.com:8080"
+      "/api/usage/**": "http://local.dt.kt.com:8080"
     }
   },
   module: {
